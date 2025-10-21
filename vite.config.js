@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(), // Use modern JSX transform (default for React 19)
+  ],
   server: {
     origin: 'http://localhost:5173',
     cors: true,

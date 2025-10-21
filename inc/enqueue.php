@@ -4,7 +4,6 @@ function oc_enqueue_assets() {
     $is_vite     = @file_get_contents($vite_server . '/@vite/client') ? true : false;
 
     if ( $is_vite ) {
-        // dev mode
         wp_enqueue_script_module( 'oc-vite-client', $vite_server . '/@vite/client', [], null, false );
         wp_enqueue_script_module( 'oc-main', $vite_server . '/src/main.jsx', [], null, true );
     } else {
