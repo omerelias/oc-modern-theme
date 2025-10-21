@@ -33,7 +33,7 @@ function App() {
 
 // Mount into #oc-root (from index.php)
 const root = document.getElementById('oc-root');
-if (root) { 
+if (root) {
   createRoot(root).render(<App />);
 }
 
