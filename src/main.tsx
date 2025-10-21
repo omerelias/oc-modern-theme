@@ -8,17 +8,17 @@ function App() {
     {
       id: 1,
       name: 'Dogs',
-      products: [
-        { id: 1, title: 'Dog Food', image: 'https://via.placeholder.com/150', price: 25 },
-        { id: 2, title: 'Leash', image: 'https://via.placeholder.com/150', price: 15 },
+      products: [ 
+        { id: 1, title: 'Doגגg Food', image: 'https://placehold.co/150x150', price: 25 },
+        { id: 2, title: 'Leash', image: 'https://placehold.co/150x150', price: 15 },
       ],
     },
     {
-      id: 2,
-      name: 'Cats',
+      id: 2, 
+      name: 'Cats', 
       products: [
-        { id: 3, title: 'Cat Food', image: 'https://via.placeholder.com/150', price: 22 },
-        { id: 4, title: 'Toy', image: 'https://via.placeholder.com/150', price: 9 },
+        { id: 3, title: 'Cat Food', image: 'https://placehold.co/150x150', price: 22 },
+        { id: 4, title: 'Toy', image: 'https://placehold.co/150x150', price: 9 },
       ],
     },
   ];
