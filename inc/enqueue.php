@@ -5,7 +5,7 @@ function oc_enqueue_assets() {
 
     if ( $is_vite ) {
         wp_enqueue_script_module( 'oc-vite-client', $vite_server . '/@vite/client', [], null, false );
-        wp_enqueue_script_module( 'oc-main', $vite_server . '/src/main.jsx', [], null, true );
+        wp_enqueue_script_module( 'oc-main', $vite_server . '/src/main.tsx', [], null, true );
     } else {
         // build mode
         $theme_dir   = get_stylesheet_directory();
@@ -14,7 +14,7 @@ function oc_enqueue_assets() {
 
         if ( file_exists( $manifest ) ) {
             $data  = json_decode( file_get_contents( $manifest ), true );
-            $entry = $data['src/main.jsx'];
+            $entry = $data['src/main.tsx'];
 
             if ( ! empty( $entry['css'] ) ) {
                 foreach ( $entry['css'] as $css ) {

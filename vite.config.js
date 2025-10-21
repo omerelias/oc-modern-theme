@@ -14,8 +14,25 @@ export default defineConfig({
     manifest: true,
     outDir: 'dist',
     emptyOutDir: true,
-    rollupOptions: {
-      input: '/src/main.jsx',
+    // Optimize build
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
     },
+    rollupOptions: {
+      input: '/src/main.tsx', // Fixed: now points to .tsx
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
+    },
+    // Optimize assets
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    sourcemap: false, // Disable sourcemaps for production
   },
 })
