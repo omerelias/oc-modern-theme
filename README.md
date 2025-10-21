@@ -7,3 +7,4 @@ Built for lightning-fast UX, full SEO compatibility and Store API integration.
 ```bash
 npm install
 npm run dev
+Build test 🚀
