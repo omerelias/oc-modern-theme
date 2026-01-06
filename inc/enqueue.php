@@ -2,7 +2,6 @@
 function oc_enqueue_assets() {
     // Use theme constants for clean control
     $is_vite = defined('OC_THEME_DEV_MODE') && OC_THEME_DEV_MODE;
-    
     // Fallback: Check environment variables/constants
     if (!$is_vite && defined('WP_DEBUG') && WP_DEBUG && 
         (isset($_GET['vite']) || 
@@ -39,8 +38,8 @@ function oc_enqueue_assets() {
     if ( $is_vite ) {
         $vite_port = defined('OC_THEME_VITE_PORT') ? OC_THEME_VITE_PORT : 5173;
         $vite_server = 'http://localhost:' . $vite_port;
-        wp_enqueue_script_module( 'oc-vite-client', $vite_server . '/@vite/client', [], null, false );
-        wp_enqueue_script_module( 'oc-main', $vite_server . '/src/main.tsx', [], null, true );
+        wp_enqueue_script_module( 'oc-vite-client', $vite_server . '/@vite/client', [], null, [] );
+        wp_enqueue_script_module( 'oc-main', $vite_server . '/src/main.tsx', [], null, ['in_footer' => true] );
         add_action('wp_head', function () {
             // רק במצב פיתוח (אם צריך)
             if (defined('WP_DEBUG') && WP_DEBUG) {
@@ -90,7 +89,7 @@ function oc_enqueue_assets() {
                 }
             }
 
-            wp_enqueue_script_module( 'oc-main', $theme_uri . '/dist/' . $entry['file'], [], null, true );
+            wp_enqueue_script_module( 'oc-main', $theme_uri . '/dist/' . $entry['file'], [], null, [] );
         }
     }
     
